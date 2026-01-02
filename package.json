@@ -1,0 +1,56 @@
+{
+  "name": "rapid-sort",
+  "version": "1.0.0",
+  "description": "Rapid Sort - Advanced Inventory Management System with React frontend and Express.js backend",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm install --prefix frontend && npm install --prefix backend",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend-first": "npm run start:backend & timeout /t 5 /nobreak > nul && npm run start:frontend",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "setup": "npm run install:all && npm run build",
+    "postinstall": "npm run install:all"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.10"
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
+  },
+  "keywords": [
+    "rapid-sort",
+    "inventory",
+    "management",
+    "react",
+    "express",
+    "mongodb",
+    "typescript",
+    "fullstack",
+    "authentication",
+    "dashboard",
+    "crud",
+    "material-ui"
+  ],
+  "author": "Rapid Sort Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/inventory-management-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/inventory-management-system/issues"
+  },
+  "homepage": "https://github.com/yourusername/inventory-management-system#readme",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
